@@ -3,18 +3,15 @@ from collections import Counter
 import re
 
 
-# ---------------------------------------------------
 # File Locations
-# ---------------------------------------------------
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOG_FILE = BASE_DIR / "logs" / "auth.log"
 
 
-# ---------------------------------------------------
 # Parse Security Log
-# ---------------------------------------------------
 
 def analyze_logs():
 
@@ -87,9 +84,7 @@ def analyze_logs():
                 ip_addresses[ip_address] += 1
 
 
-    # ---------------------------------------------------
     # Display Report
-    # ---------------------------------------------------
 
     print()
     print("=" * 50)
@@ -188,9 +183,7 @@ def analyze_logs():
     print()
 
 
-# ---------------------------------------------------
 # Run Analyzer
-# ---------------------------------------------------
 
 if __name__ == "__main__":
     analyze_logs()
