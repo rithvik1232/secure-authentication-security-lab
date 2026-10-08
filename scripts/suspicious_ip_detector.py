@@ -3,26 +3,20 @@ from collections import defaultdict
 import re
 
 
-# ---------------------------------------------------
 # File Location
-# ---------------------------------------------------
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOG_FILE = BASE_DIR / "logs" / "auth.log"
 
 
-# ---------------------------------------------------
 # Detection Thresholds
-# ---------------------------------------------------
 
 FAILED_LOGIN_THRESHOLD = 5
 MULTIPLE_USER_THRESHOLD = 3
 
 
-# ---------------------------------------------------
 # Analyze IP Activity
-# ---------------------------------------------------
 
 def analyze_ip_activity():
 
@@ -112,9 +106,7 @@ def analyze_ip_activity():
                 activity["rate_limits"] += 1
 
 
-    # ---------------------------------------------------
     # Display Report
-    # ---------------------------------------------------
 
     print()
 
@@ -194,9 +186,7 @@ def analyze_ip_activity():
             )
 
 
-        # ---------------------------------------------------
         # Risk Classification
-        # ---------------------------------------------------
 
         if risk_score >= 7:
             risk_level = "HIGH"
@@ -208,9 +198,7 @@ def analyze_ip_activity():
             risk_level = "LOW"
 
 
-        # ---------------------------------------------------
         # Print Suspicious IP
-        # ---------------------------------------------------
 
         if risk_score >= 4:
 
@@ -304,9 +292,7 @@ def analyze_ip_activity():
     print()
 
 
-# ---------------------------------------------------
 # Run Detector
-# ---------------------------------------------------
 
 if __name__ == "__main__":
 
