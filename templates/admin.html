@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Security Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h1>Admin Security Dashboard</h1>
+
+    <p>
+        Authentication monitoring and security event analysis.
+    </p>
+
+
+    <div class="admin-info">
+
+        <strong>Administrator:</strong>
+        {{ user.username }}
+
+        &nbsp; | &nbsp;
+
+        <strong>Role:</strong>
+        {{ user.role }}
+
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+
+            <h3>
+                {{ stats.successful_logins }}
+            </h3>
+
+            <p>
+                Successful Logins
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                {{ stats.failed_logins }}
+            </h3>
+
+            <p>
+                Failed Logins
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                {{ stats.accounts_locked }}
+            </h3>
+
+            <p>
+                Accounts Locked
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                {{ stats.unauthorized_access }}
+            </h3>
+
+            <p>
+                Unauthorized Attempts
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                {{ stats.csrf_blocked }}
+            </h3>
+
+            <p>
+                CSRF Requests Blocked
+            </p>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <h3>
+                {{ stats.rate_limits }}
+            </h3>
+
+            <p>
+                Rate Limits Triggered
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="security-events">
+
+        <h2>
+            Recent Security Events
+        </h2>
+
+
+        <div class="table-wrapper">
+
+            <table class="security-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Timestamp
+                        </th>
+
+                        <th>
+                            Event
+                        </th>
+
+                        <th>
+                            User
+                        </th>
+
+                        <th>
+                            Source IP
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for event in recent_events %}
+
+                    <tr>
+
+                        <td>
+                            {{ event.timestamp }}
+                        </td>
+
+                        <td>
+                            {{ event.event }}
+                        </td>
+
+                        <td>
+                            {{ event.username }}
+                        </td>
+
+                        <td>
+                            {{ event.ip }}
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

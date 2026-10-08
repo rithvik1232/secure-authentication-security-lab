@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}
+Secure Authentication Lab
+{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>Secure Authentication Lab</h1>
+
+    <p>
+        A Python-powered web security lab focused on secure authentication,
+        access control, security monitoring, and attack detection.
+    </p>
+
+    <div class="buttons">
+<a href="{{ url_for('register') }}" class="button">Create Account</a>
+
+<a href="{{ url_for('login') }}" class="button secondary">
+    Login
+</a>
+</div>
+
+</div>
+
+<div class="features">
+
+    <div class="feature-card">
+        <h3>Secure Authentication</h3>
+        <p>
+            Password hashing, secure sessions, and authentication controls.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Access Control</h3>
+        <p>
+            Role-based permissions for users and administrators.
+        </p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Security Monitoring</h3>
+        <p>
+            Python-powered detection of suspicious authentication activity.
+        </p>
+    </div>
+
+</div>
+
+{% endblock %}

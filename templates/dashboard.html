@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h1>Welcome, {{ user.username }}</h1>
+
+    <p>
+        You are successfully authenticated.
+    </p>
+
+    <div class="dashboard-card">
+
+        <h3>Account Information</h3>
+
+        <p>
+            <strong>Username:</strong>
+            {{ user.username }}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            {{ user.email }}
+        </p>
+
+        <p>
+            <strong>Role:</strong>
+            {{ user.role }}
+        </p>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>Authentication Status</h3>
+
+        <p>
+            ✓ Authenticated session active
+        </p>
+
+        <p>
+            ✓ Password stored using bcrypt
+        </p>
+
+        <p>
+            ✓ Dashboard protected from unauthenticated users
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}
