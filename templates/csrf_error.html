@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Security Request Blocked
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h1>400</h1>
+
+    <h2>Security Request Blocked</h2>
+
+    <p class="form-description">
+        This request could not be verified and was blocked for security reasons.
+    </p>
+
+    <a href="{{ url_for('home') }}" class="button">
+        Return Home
+    </a>
+
+</div>
+
+{% endblock %}
